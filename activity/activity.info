@@ -1,0 +1,8 @@
+[Activity]
+name = Appel Haken
+activity_version = 4 
+host_version = 1
+bundle_id = mulawa.AppelHaken
+icon = activity
+show_launcher = yes
+exec = sugar-activity activity.PeterActivity
