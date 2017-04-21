@@ -1,10 +1,9 @@
 slider.py
-my_cursor_mask.xbm
 AppelHaken.py
 setup.py
 g.py
 buttons.py
-my_cursor.xbm
+load_save.py
 utils.py
 ah.py
 activity.py
@@ -13,6 +12,7 @@ sugargame/canvas.py
 sugargame/event.py
 activity/activity.info
 activity/activity.svg
+data/pointer.png
 data/new_down.png
 data/1_up.png
 data/1_down.png

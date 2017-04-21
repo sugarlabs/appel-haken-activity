@@ -60,7 +60,7 @@ class Grid:
                     sq0.group=gp
             if unchanged: break
         self.fill_in_singles()
-        self.clash_rects=[]; self.finished=False
+        self.clash_rects=[]; self.finished=False; g.scored=False
                 
     def reset(self):
         self.colour_ind=0
@@ -179,7 +179,8 @@ class Grid:
             if sq.group!=-1:
                 if sq.colour==0: return False
         if len(self.clash_rects)>0: return False
-        g.score+=g.level
+        if not g.scored: g.score+=g.level
+        g.scored=True
         self.finished=True
         return True
 

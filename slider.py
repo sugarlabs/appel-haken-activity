@@ -36,7 +36,7 @@ class Slider:
             x+=self.dx
 
     def mouse(self):
-        mx,my=pygame.mouse.get_pos()
+        mx,my=g.pos
         rect=self.easy.get_rect(topleft=(self.x1,self.y))
         if rect.collidepoint(mx,my):
             if g.level>1: g.level-=1; return True#****

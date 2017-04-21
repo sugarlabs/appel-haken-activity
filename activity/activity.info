@@ -1,6 +1,6 @@
 [Activity]
 name = Appel Haken
-activity_version = 4 
+activity_version = 24
 host_version = 1
 bundle_id = mulawa.AppelHaken
 icon = activity
