@@ -6,4 +6,4 @@ bundle_id = mulawa.AppelHaken
 icon = activity
 show_launcher = yes
 exec = sugar-activity activity.PeterActivity
-repository = github.com/sugarlabs/appel-haken-activity.git
+repository = https://github.com/sugarlabs/appel-haken-activity.git
