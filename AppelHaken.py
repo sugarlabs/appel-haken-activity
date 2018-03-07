@@ -9,11 +9,12 @@
     (at your option) any later version.
 
 """
-import g,pygame,utils,sys,buttons,ah,slider,load_save
+import g, pygame, utils, sys, buttons, ah, slider, load_save
 try:
-    import gtk
+    from gi.repository import Gtk
 except:
     pass
+
 
 class AppelHaken:
 
@@ -69,7 +70,7 @@ class AppelHaken:
         while flushing:
             flushing=False
             if self.journal:
-                while gtk.events_pending(): gtk.main_iteration()
+                while Gtk.events_pending(): Gtk.main_iteration()
             for event in pygame.event.get(): flushing=True
 
     def run(self):
@@ -80,14 +81,14 @@ class AppelHaken:
         self.slider=slider.Slider(g.sx(16),g.sy(20.5),9,utils.GREEN)
         self.grid=ah.Grid()
         self.grid.new1(); self.grid.setup()
-        if self.canvas<>None: self.canvas.grab_focus()
+        if self.canvas!=None: self.canvas.grab_focus()
         ctrl=False
         pygame.key.set_repeat(600,120); key_ms=pygame.time.get_ticks()
         going=True
         while going:
             if self.journal:
                 # Pump GTK messages.
-                while gtk.events_pending(): gtk.main_iteration()
+                while Gtk.events_pending(): Gtk.main_iteration()
 
             # Pump PyGame messages.
             for event in pygame.event.get():
