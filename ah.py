@@ -7,7 +7,7 @@ RC=[None,(5,7),(6,9),(7,11),(8,12),(9,14),(10,15),(11,17),(12,19),(13,20)]
   # level 1 to 9
 
 class Square:
-    def __init__(self,ind,r,c,x,y,N,S,E,W):
+    def __init__(self, ind, r, c, x, y, N, S, E, W):
         self.ind=ind; self.r=r; self.c=c; self.x=x; self.y=y
         self.N=N; self.S=S; self.E=E; self.W=W #  indexes
         self.group=-1 # -1 outside 0 unassigned 1...
@@ -75,7 +75,7 @@ class Grid:
             if sq.group==0: return sq
         return None
 
-    def make_group(self,sq0,gp): # start @ sq0 -> group, gp
+    def make_group(self, sq0, gp): # start @ sq0 -> group, gp
         sq=sq0
         for i in range(int(self.total/self.ng)):
             sq.group=gp
@@ -135,7 +135,7 @@ class Grid:
             if r>0 and c>0 and r<=self.nr and c<self.nc:
                 sq=squares[sq0.E]
                 if sq0.colour>0:
-                    if sq0.group<>sq.group:
+                    if sq0.group!=sq.group:
                         if sq0.colour==sq.colour: #clash
                             x=sq.x-dd; y=sq.y
                             self.clash_rects.append((x,y,dd*2,d))
@@ -145,7 +145,7 @@ class Grid:
             if r>0 and c>0 and r<self.nr and c<=self.nc:
                 sq=squares[sq0.S]
                 if sq0.colour>0:
-                    if sq0.group<>sq.group:
+                    if sq0.group!=sq.group:
                         if sq0.colour==sq.colour: #clash
                             x=sq.x; y=sq.y-dd
                             self.clash_rects.append((x,y,d,dd*2))
@@ -168,7 +168,7 @@ class Grid:
             return True
         return False
 
-    def colour_in(self,sq0):
+    def colour_in(self, sq0):
         gp=sq0.group
         for sq in squares:
             if sq.group==gp: sq.colour=self.colour_ind

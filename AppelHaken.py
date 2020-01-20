@@ -31,14 +31,14 @@ class AppelHaken:
         if self.grid.complete():
             utils.centre_blit(g.screen,g.smiley,self.smiley_cxy)
 
-    def do_button(self,bu):
+    def do_button(self, bu):
         if bu=='reset': self.grid.reset(); buttons.clear()
         elif bu=='new': self.grid.setup(); buttons.clear()
         else:
             if not self.grid.complete():
                 self.grid.colour_ind=int(bu)
 
-    def do_key(self,key):
+    def do_key(self, key):
         if key in g.SQUARE: self.do_button('new'); return
         if key in g.CIRCLE: self.do_button('reset'); return
         if key in g.TICK:
@@ -81,7 +81,8 @@ class AppelHaken:
         self.slider=slider.Slider(g.sx(16),g.sy(20.5),9,utils.GREEN)
         self.grid=ah.Grid()
         self.grid.new1(); self.grid.setup()
-        if self.canvas!=None: self.canvas.grab_focus()
+        if self.canvas!=None: 
+            self.canvas.grab_focus()
         ctrl=False
         pygame.key.set_repeat(600,120); key_ms=pygame.time.get_ticks()
         going=True
@@ -98,7 +99,7 @@ class AppelHaken:
                 elif event.type == pygame.MOUSEMOTION:
                     g.pos=event.pos
                     g.redraw=True
-                    if self.canvas<>None: self.canvas.grab_focus()
+                    if self.canvas!=None: self.canvas.grab_focus()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     g.redraw=True
                     if event.button==1:
