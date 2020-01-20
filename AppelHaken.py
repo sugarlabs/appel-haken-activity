@@ -98,7 +98,7 @@ class AppelHaken:
                 elif event.type == pygame.MOUSEMOTION:
                     g.pos=event.pos
                     g.redraw=True
-                    if self.canvas<>None: self.canvas.grab_focus()
+                    if self.canvas!=None: self.canvas.grab_focus()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     g.redraw=True
                     if event.button==1:

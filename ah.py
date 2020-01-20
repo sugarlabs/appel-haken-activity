@@ -135,7 +135,7 @@ class Grid:
             if r>0 and c>0 and r<=self.nr and c<self.nc:
                 sq=squares[sq0.E]
                 if sq0.colour>0:
-                    if sq0.group<>sq.group:
+                    if sq0.group!=sq.group:
                         if sq0.colour==sq.colour: #clash
                             x=sq.x-dd; y=sq.y
                             self.clash_rects.append((x,y,dd*2,d))
@@ -145,7 +145,7 @@ class Grid:
             if r>0 and c>0 and r<self.nr and c<=self.nc:
                 sq=squares[sq0.S]
                 if sq0.colour>0:
-                    if sq0.group<>sq.group:
+                    if sq0.group!=sq.group:
                         if sq0.colour==sq.colour: #clash
                             x=sq.x; y=sq.y-dd
                             self.clash_rects.append((x,y,d,dd*2))
