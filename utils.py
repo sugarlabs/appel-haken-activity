@@ -53,7 +53,7 @@ def load_image(file1,alpha=False,subdir=''): # eg subdir='glow'
         img=pygame.image.load(fname)
     except:
         print("Peter says: Can't find "+fname); 
-	exit()
+        exit()
     if alpha:
         img=img.convert_alpha()
     else:

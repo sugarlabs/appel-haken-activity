@@ -82,7 +82,7 @@ class AppelHaken:
         self.grid=ah.Grid()
         self.grid.new1(); self.grid.setup()
         if self.canvas!=None: 
-	    self.canvas.grab_focus()
+            self.canvas.grab_focus()
         ctrl=False
         pygame.key.set_repeat(600,120); key_ms=pygame.time.get_ticks()
         going=True
