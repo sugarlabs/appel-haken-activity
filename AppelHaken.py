@@ -81,7 +81,8 @@ class AppelHaken:
         self.slider=slider.Slider(g.sx(16),g.sy(20.5),9,utils.GREEN)
         self.grid=ah.Grid()
         self.grid.new1(); self.grid.setup()
-        if self.canvas!=None: self.canvas.grab_focus()
+        if self.canvas!=None: 
+	    self.canvas.grab_focus()
         ctrl=False
         pygame.key.set_repeat(600,120); key_ms=pygame.time.get_ticks()
         going=True
