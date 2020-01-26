@@ -31,14 +31,14 @@ class AppelHaken:
         if self.grid.complete():
             utils.centre_blit(g.screen,g.smiley,self.smiley_cxy)
 
-    def do_button(self,bu):
+    def do_button(self, bu):
         if bu=='reset': self.grid.reset(); buttons.clear()
         elif bu=='new': self.grid.setup(); buttons.clear()
         else:
             if not self.grid.complete():
                 self.grid.colour_ind=int(bu)
 
-    def do_key(self,key):
+    def do_key(self, key):
         if key in g.SQUARE: self.do_button('new'); return
         if key in g.CIRCLE: self.do_button('reset'); return
         if key in g.TICK:

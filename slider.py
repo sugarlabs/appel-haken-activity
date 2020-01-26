@@ -3,7 +3,7 @@ import utils,pygame,g,copy
 
 # sets g.level 1..steps
 class Slider:
-    def __init__(self,cx,cy,steps,colour=utils.BLACK):
+    def __init__(self, cx, cy, steps, colour=utils.BLACK):
         self.easy=utils.load_image('easy.png',True)
         self.hard=utils.load_image('hard.png',True)
         self.xo=utils.load_image('xo.png',True)
