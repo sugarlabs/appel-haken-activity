@@ -1,7 +1,8 @@
-#load_save.py
+# load_save.py
 import g
 
-loaded=[] # list of strings
+loaded = []  # list of strings
+
 
 def load(f):
     global loaded
@@ -11,16 +12,16 @@ def load(f):
     except:
         pass
 
+
 def save(f):
     f.write(str(g.score)+'\n')
     f.write(str(g.level)+'\n')
 
 # note need for rstrip() on strings
+
+
 def retrieve():
     global loaded
-    if len(loaded)>1:
-        g.score=int(loaded[0])
-        g.level=int(loaded[1])
-
-
-    
+    if len(loaded) > 1:
+        g.score = int(loaded[0])
+        g.level = int(loaded[1])
