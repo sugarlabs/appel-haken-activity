@@ -1,17 +1,17 @@
 # activity.py
 # my standard link between sugar and my activity
 
+import AppelHaken
+import load_save
+import sugargame.canvas
+from sugar3.activity.widgets import StopButton
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity import activity
+import pygame
+from gi.repository import Gtk
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
-import pygame
-from sugar3.activity import activity
-from sugar3.graphics.toolbarbox import ToolbarBox
-from sugar3.activity.widgets import ActivityToolbarButton
-from sugar3.activity.widgets import StopButton
-import sugargame.canvas
-import load_save
-import AppelHaken
 
 
 class PeterActivity(activity.Activity):
