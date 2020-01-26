@@ -4,7 +4,7 @@ import g,utils,pygame
 class Button:
     _instances=[]
     
-    def __init__(self,name, coordinates,centre=True): # eg ('plus',(30,40))
+    def __init__(self, name, coordinates, centre=True): # eg ('plus',(30,40))
         (x1,y1) = coordinates
         self._instances.append(self)
         up=utils.load_image(name+"_up.png",True)

@@ -45,7 +45,7 @@ def version_display():
 # resizes it using the image scaling factor, g.imgf
 #   so it is the right size for the current screen resolution
 #   all images are designed for 1200x900
-def load_image(file1,alpha=False,subdir=''): # eg subdir='glow'
+def load_image(file1, alpha=False, subdir=''): # eg subdir='glow'
     data='data'
     if subdir!='': data=os.path.join('data',subdir)
     fname=os.path.join(data,file1)
@@ -78,14 +78,14 @@ def shuffle(lst):
         lt.append(lst[r]); l1.remove(lst[r])
     return lt
 
-def centre_blit(screen,img, coordinates,angle=0): # rotation is clockwise
+def centre_blit(screen, img, coordinates, angle=0): # rotation is clockwise
     (cx,cy) = coordinates
     img1=img
     if angle!=0: img1=pygame.transform.rotate(img,-angle)
     rect=img1.get_rect()
     screen.blit(img1,(cx-rect.width/2,cy-rect.height/2))
 
-def text_blit(screen,s,font, coordinates, color,shadow=True):
+def text_blit(screen, s, font, coordinates, color, shadow=True):
     (cx,cy) = coordinates
     (r,g,b) = color
     if shadow:
@@ -97,7 +97,7 @@ def text_blit(screen,s,font, coordinates, color,shadow=True):
     screen.blit(text,rect)
     return rect
 
-def text_blit1(screen,s,font, coordinates, color,shadow=True):
+def text_blit1(screen, s, font, coordinates, color, shadow=True):
     (x,y) = coordinates
     (r,g,b) = color
     if shadow:
@@ -112,7 +112,7 @@ def text_blit1(screen,s,font, coordinates, color,shadow=True):
 # m is the message
 # d is the # of pixels in the border around the text
 # (cx,cy) = co-ords centre - (0,0) means use screen centre
-def message(screen,font,m, coordinates=(0,0),d=20):
+def message(screen, font, m, coordinates=(0,0), d=20):
     (cx,cy) = coordinates
     if m!='':
         if pygame.font:
@@ -156,7 +156,7 @@ def mouse_on_img_rect(img, coordinates):
     x1=cx-w2; y1=cy-h2; x2=cx+w2; y2=cy+h2
     return mouse_in(x1,y1,x2,y2)
             
-def mouse_in(x1,y1,x2,y2):
+def mouse_in(x1, y1, x2, y2):
     mx,my=g.pos
     if x1>mx: return False
     if x2<mx: return False
@@ -176,7 +176,7 @@ def display_score():
         g.screen.blit(text,(x,y))
         centre_blit(g.screen,g.sparkle,(x-d+g.sy(.05),y+h/2-g.sy(.2)))
 
-def display_number(n, coordinates,font,colour=BLACK,bgd=None,outline_font=None):
+def display_number(n, coordinates, font, colour=BLACK, bgd=None, outline_font=None):
     (cx,cy) = coordinates
     if pygame.font:
         if bgd==None:
@@ -188,7 +188,7 @@ def display_number(n, coordinates,font,colour=BLACK,bgd=None,outline_font=None):
             centre_blit(g.screen,outline,(cx,cy))
         centre_blit(g.screen,text,(cx,cy))
 
-def display_number1(n, coordinates,font,colour=BLACK):
+def display_number1(n, coordinates, font, colour=BLACK):
     (x,cy) = coordinates
     if pygame.font:
         text=font.render(str(n),True,colour)
