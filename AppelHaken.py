@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # AppelHaken.py
 """
     Copyright (C) 2010  Peter Hewitt
